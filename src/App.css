@@ -1,42 +1,132 @@
-#root {
-  max-width: 1280px;
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: hsl(230, 100%, 99%);
+}
+.App {
+  width: 1204;
+  background-color: #F1F5FE;
+  border-bottom-left-radius: 200px ;
+  height: 400px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding-top: 2.5rem;
+  height: 600px;
+  width: 70%
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 140px;
+  background-image: url("../public/images/pattern-circles.svg");
+  background-size: contain; /* Faz a imagem cobrir toda a área */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat;
+  margin-bottom: 3rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.title h1 {
+  padding: .5rem;
+  color:   hsl(227, 35%, 25%)
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.title p {
+  color: hsl(225, 20%, 60%);
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
-  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: 400px;
+  padding-top: 2rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.06);
+}
+.pageview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+.pageview p {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: hsl(225, 20%, 60%);
 }
 
-.read-the-docs {
-  color: #888;
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.price span {
+  font-size: 32px;
+  font-weight: bold;
+}
+.price p {
+  font-size: 12px;
+  font-weight: normal;
+  padding-left: 0.5rem;
+}
+
+.billing {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0rem;
+}
+
+.billing p {
+  color: hsl(225, 20%, 60%);
+  padding: 0px 0.7rem;
+}
+.billing span {
+  width: 75px;
+  text-align: center;
+  padding: 0.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 12px;
+  color: hsl(15, 100%, 70%);
+  background-color: hsl(14, 92%, 95%);
+}
+.linha {
+  padding-top: 1rem;
+  border-bottom: 2px solid hsl(224, 65%, 95%);
+}
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 2rem;
+}
+ul {
+  list-style-type: none;
+}
+li img {
+  object-fit: contain;
+  padding-right: 0.5rem;
+}
+li {
+  padding: 0.2rem;
+  margin: 0.2rem;
+  color: hsl(225, 20%, 60%);
+}
+
+button {
+  width: 150px;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 20px;
+  color: white;
+  background-color: hsl(227, 35%, 25%);
 }
