@@ -5,8 +5,8 @@ body {
 }
 .App {
   width: 1204;
-  background-color: #F1F5FE;
-  border-bottom-left-radius: 200px ;
+  background-color: #f1f5fe;
+  border-bottom-left-radius: 200px;
   height: 400px;
 }
 .container {
@@ -17,7 +17,7 @@ body {
   margin: 0 auto;
   padding-top: 2.5rem;
   height: 600px;
-  width: 70%
+  width: 70%;
 }
 
 .title {
@@ -27,15 +27,15 @@ body {
   align-items: center;
   width: 500px;
   height: 140px;
-  background-image: url("../public/images/pattern-circles.svg");
+  background-image: url("/images/pattern-circles.svg");
   background-size: contain; /* Faz a imagem cobrir toda a área */
   background-position: center; /* Centraliza a imagem */
   background-repeat: no-repeat;
   margin-bottom: 3rem;
 }
 .title h1 {
-  padding: .5rem;
-  color:   hsl(227, 35%, 25%)
+  padding: 0.5rem;
+  color: hsl(227, 35%, 25%);
 }
 .title p {
   color: hsl(225, 20%, 60%);
@@ -78,7 +78,54 @@ body {
   font-weight: normal;
   padding-left: 0.5rem;
 }
+.range {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
 
+.custom-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #ddd; 
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("/images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+  background-color: hsl(174, 86%, 45%);
+  box-shadow: 1px 2px 22px hsl(174, 97%, 30%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-range::-moz-range-thumb {
+  width: 35px;
+  height: 35px;
+  background: hsl(174, 86%, 45%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-range::-webkit-slider-thumb:hover {
+  background-color:hsl(174, 77%, 80%)
+}
 .billing {
   display: flex;
   justify-content: center;

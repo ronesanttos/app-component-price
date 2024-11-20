@@ -1,6 +1,12 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [value, setValue] = useState(16);
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
   return (
     <div className="App">
       <div className="container">
@@ -12,19 +18,32 @@ function App() {
           <div className="pageview">
             <p>100K PAGEVIEWS</p>
             <div className="price">
-              <span>$16.00</span>
+              <span>${value}</span>
               <p>/month</p>
             </div>
           </div>
-        
+          <div className="range">
+            <input
+              type="range"
+              min="0"
+              max="32"
+              value={value}
+              onChange={handleChange}
+              className="custom-range"
+              style={{
+                background: ` linear-gradient(to right,hsl(174, 77%, 80%) ${
+                  value * 100 / 32
+                }%, #ddd ${value * 100 / 32}%)`,
+              }}
+            />
+          </div>
           <div className="billing">
-              <p>Monthly Billing</p>
-              <input type="radio" name="billing" id="billing" value={"true"} />
-              <p>Yearly Billing</p>
-              <span>25% discount</span>
+            <p>Monthly Billing</p>
+            <input type="radio" name="billing" id="billing" value={"true"} />
+            <p>Yearly Billing</p>
+            <span>25% discount</span>
           </div>
-          <div className="linha">
-          </div>
+          <span className="linha"></span>
           <div className="info">
             <ul>
               <li>
