@@ -4,7 +4,7 @@ body {
   background-color: hsl(230, 100%, 99%);
 }
 .App {
-  width: 1204;
+  width: 100%;
   background-color: #f1f5fe;
   border-bottom-left-radius: 200px;
   height: 400px;
@@ -35,10 +35,13 @@ body {
 }
 .title h1 {
   padding: 0.5rem;
+  font-weight: 800;
   color: hsl(227, 35%, 25%);
 }
 .title p {
   color: hsl(225, 20%, 60%);
+  font-size: 15px;
+  font-weight: 600;
 }
 .card {
   display: flex;
@@ -46,7 +49,6 @@ body {
   justify-content: center;
   width: 500px;
   height: 400px;
-  padding-top: 2rem;
   border-radius: 10px;
   background-color: white;
   box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.06);
@@ -55,7 +57,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
 }
 .pageview p {
   font-weight: bold;
@@ -71,11 +73,11 @@ body {
 }
 .price span {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 900;
 }
 .price p {
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 600;
   padding-left: 0.5rem;
 }
 .range {
@@ -92,13 +94,12 @@ body {
   appearance: none;
   width: 100%;
   height: 8px;
-  background: #ddd; 
+  background: #ddd;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 
 .custom-range::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -123,29 +124,76 @@ body {
   cursor: pointer;
 }
 
-.custom-range::-webkit-slider-thumb:hover {
-  background-color:hsl(174, 77%, 80%)
+.custom-range::-webkit-slider-thumb:hover,
+.custom-billing:hover {
+  background-color: hsl(174, 77%, 80%);
 }
 .billing {
   display: flex;
-  justify-content: center;
-  padding: 2rem 0rem;
+  justify-content: end;
+  align-items: center;
+  padding: 4rem 0rem 2rem 0rem;
+  margin-right: 2rem;
 }
 
 .billing p {
   color: hsl(225, 20%, 60%);
-  padding: 0px 0.7rem;
+  font-size: 15px;
+  padding: 0rem 0.5rem;
 }
 .billing span {
-  width: 75px;
   text-align: center;
   padding: 0.2rem;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 12px;
   color: hsl(15, 100%, 70%);
   background-color: hsl(14, 92%, 95%);
 }
+
+.billing span::before {
+  content: "25% discount";
+  width: 80px;
+
+}
+.range-billing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+.custom-billing {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ddd;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  padding: 1px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.custom-billing::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  margin: 0.5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.custom-billing::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .linha {
   padding-top: 1rem;
   border-bottom: 2px solid hsl(224, 65%, 95%);
@@ -174,6 +222,54 @@ button {
   padding: 0.5rem;
   margin-top: 1rem;
   border-radius: 20px;
-  color: white;
+  color:  hsl(225, 20%, 60%);
   background-color: hsl(227, 35%, 25%);
+}
+button:hover {
+  color: white;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 400px;
+  }
+  .title {
+    width: 400px;
+  }
+  .title h1 {
+    font-size: 26px;
+  }
+  .title p {
+    width: 170px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .card {
+    width: 400px;
+    height: 600px;
+  }
+
+  .pageview {
+    flex-direction: column;
+  }
+
+  .price {
+    position: relative;
+    top: 4.8rem;
+  }
+
+  .range {
+    position: relative;
+    bottom: 2rem;
+  }
+  .billing p {
+    font-size: 12px;
+  }
+  .billing span::before {
+    content: "-25%";
+  }
+  .info {
+    flex-direction: column;
+  }
 }

@@ -3,9 +3,14 @@ import "./App.css";
 
 function App() {
   const [value, setValue] = useState(16);
+  const [valueBilling, setValueBilling] = useState(0)
 
   const handleChange = (e) => {
     setValue(e.target.value);
+    setValueBilling(e.target.value)
+  };
+  const handleChangeBilling = (e) => {
+    setValueBilling(e.target.value)
   };
   return (
     <div className="App">
@@ -18,7 +23,7 @@ function App() {
           <div className="pageview">
             <p>100K PAGEVIEWS</p>
             <div className="price">
-              <span>${value}</span>
+              <span>${value}.00</span>
               <p>/month</p>
             </div>
           </div>
@@ -32,16 +37,20 @@ function App() {
               className="custom-range"
               style={{
                 background: ` linear-gradient(to right,hsl(174, 77%, 80%) ${
-                  value * 100 / 32
-                }%, #ddd ${value * 100 / 32}%)`,
+                  (value * 100) / 32
+                }%, #ddd ${(value * 100) / 32}%)`,
               }}
             />
           </div>
           <div className="billing">
             <p>Monthly Billing</p>
-            <input type="radio" name="billing" id="billing" value={"true"} />
+
+            <div className="range-billing">
+             <input type="range" min="0" max="1" value={valueBilling} onChange={handleChangeBilling} className="custom-billing"/>
+            </div>
+
             <p>Yearly Billing</p>
-            <span>25% discount</span>
+            <span></span>
           </div>
           <span className="linha"></span>
           <div className="info">
